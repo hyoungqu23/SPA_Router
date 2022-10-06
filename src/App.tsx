@@ -1,10 +1,12 @@
-import React from 'react';
 import Root from './pages/Root/Root';
+import About from './pages/About/About';
+import Router from './components/Router/Router';
 
 const App = () => {
   return (
     <div className="App">
-      <Root />
+      <Router path="/" element={<Root />}></Router>
+      <Router path="/about" element={<About />}></Router>
     </div>
   );
 };
