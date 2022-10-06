@@ -4,7 +4,7 @@ React, History API 사용하여 SPA Router 기능 구현하기
 
 ## 블로그
 
-#### [블로그 게시글 보러가기](https://hyoungmin.notion.site/SPA-Client-Side-Routing-d65f65e12a714ec4b67b7790fa2db53a)
+#### [블로그 게시글 보러가기](https://hyoungmin.notion.site/SPA-Routing-d65f65e12a714ec4b67b7790fa2db53a)
 
 - 블로그 게시글에 과제 요구 사항과 해결 방법, 트러블 슈팅, 데모 영상까지 작성되어 있습니다.
 
