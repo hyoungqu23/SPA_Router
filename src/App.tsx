@@ -1,6 +1,6 @@
 import Root from './pages/Root/Root';
 import About from './pages/About/About';
-import Router from './components/Router/Router';
+import Router from './Router/Router';
 
 const App = () => {
   return (
