@@ -1,12 +1,11 @@
 import React from 'react';
+import Link from '../../components/Router/Link';
 
-type Props = {};
-
-const Root = (props: Props) => {
+const Root = () => {
   return (
     <div>
       <h1>Root</h1>
-      <button>go to About</button>
+      <Link href="/about">Move to About</Link>
     </div>
   );
 };
