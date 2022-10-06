@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import RouterContext from './RouterContext';
 
 interface RouterProps extends React.PropsWithChildren {
-  path: string;
+  to: string;
   element: React.ReactNode;
 }
 
-const Router = ({ path, element }: RouterProps) => {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+const Router = ({ to, element }: RouterProps) => {
+  const { path } = useContext(RouterContext);
 
-  useEffect(() => {
-    const pathChange = () => {
-      setCurrentPath(window.location.pathname);
-    };
-
-    window.addEventListener('popstate', pathChange);
-
-    return () => {
-      window.removeEventListener('popstate', pathChange);
-    };
-  }, []);
-
-  return currentPath === path ? <>{element}</> : null;
+  return path === to ? <>{element}</> : null;
 };
 
 export default Router;

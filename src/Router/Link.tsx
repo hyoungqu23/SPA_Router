@@ -1,17 +1,16 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import RouterContext from '../Router/RouterContext';
 interface LinkProps {
   href: string;
   children: React.ReactNode;
 }
 
 const Link = ({ href, children }: LinkProps) => {
+  const { path, changePath } = useContext(RouterContext);
+
   const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    window.history.pushState({ data: href }, '', href);
-
-    const popStateEvent = new PopStateEvent('popstate');
-    window.dispatchEvent(popStateEvent);
+    if (path !== href) changePath(href);
   };
 
   return (

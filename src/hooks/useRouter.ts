@@ -1,20 +1,19 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
+import RouterContext from '../Router/RouterContext';
 
 interface useRouterParams {
   url: string;
 }
 
 export const useRouter = () => {
-  const push = useCallback(({ url }: useRouterParams = { url: '/' }) => {
-    const { pathname } = window.location;
+  const { path, changePath } = useContext(RouterContext);
 
-    if (pathname === url) return;
-
-    window.history.pushState({ data: url }, '', url);
-
-    const popStateEvent = new PopStateEvent('popstate');
-    window.dispatchEvent(popStateEvent);
-  }, []);
+  const push = useCallback(
+    ({ url }: useRouterParams = { url: '/' }) => {
+      if (path !== url) changePath(url);
+    },
+    [path, changePath],
+  );
 
   return { push };
 };
