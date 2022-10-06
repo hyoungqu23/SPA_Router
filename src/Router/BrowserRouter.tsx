@@ -11,12 +11,14 @@ const BrowserRouter = ({ children }: PropsWithChildren) => {
       setPath(pathname);
     };
 
+    window.history.pushState({ data: path }, '', path);
+
     window.addEventListener('popstate', pathChange);
 
     return () => {
       window.removeEventListener('popstate', pathChange);
     };
-  }, []);
+  }, [path]);
 
   return (
     <RouterContext.Provider
