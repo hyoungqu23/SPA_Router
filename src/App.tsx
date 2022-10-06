@@ -5,12 +5,10 @@ import BrowserRouter from './Router/BrowserRouter';
 
 const App = () => {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Router to="/" element={<Root />} />
-        <Router to="/about" element={<About />} />
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Router to="/" element={<Root />} />
+      <Router to="/about" element={<About />} />
+    </BrowserRouter>
   );
 };
 

@@ -11,11 +11,11 @@ const About = () => {
   };
 
   return (
-    <div>
+    <>
       <h1>About</h1>
       <Link href="/">Move to Root</Link>
       <button onClick={handleBtnClick}>Move by Hook</button>
-    </div>
+    </>
   );
 };
 
